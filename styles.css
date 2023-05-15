@@ -52,9 +52,7 @@ body {
   padding: 1rem;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
-article{
-  background-color: hsl(0, 0%, 100%);
-}
+
 .form{
   display: flex;
   /* border: 1px solid red; */
