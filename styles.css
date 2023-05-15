@@ -3,24 +3,33 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
+body{
   display: flex;
+  height: 100vh;
+  align-items: center;justify-content: center;
+  background-color: hsl(216, 12%, 8%);
+}
+.bodyContent {
+  display: flex;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   flex-direction: column;
-  gap: 3rem;
-  /* align-items: center; */
+  width: 65vw;
+  /* gap: 3rem; */
   justify-content: center;
-  padding-top: 3rem;
+  padding: 3rem;
   background-color: hsl(216, 12%, 8%);
   background-image: url(./images/sphere-3d-model-2560x1080-10993.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 5px;
 }
 .header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  width: 60vw;
-  margin: 0 auto;
+  /* width: 60vw;
+  margin: 0 auto; */
 }
 #crud {
   display: flex;
@@ -32,7 +41,7 @@ body {
   font-weight: bold;
 }
 #box {
-  width: 300px;
+  width: 200px;
   padding: 1rem;
   border: 1px solid hsl(39, 100%, 50%);
   box-shadow: 0 3px 10px rgb(255 165 0 / 0.2);
@@ -44,16 +53,22 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  /* background-color: hsl(216, 12%, 8%); */
-  gap: 1rem;
-  width: 60vw;
-  margin: 0 auto;
-  border-radius: 1rem;
-  padding: 1rem;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  /* gap: 1rem; */
+  /* width: 60vw;
+  margin: 0 auto; */
+  /* border: 1px solid red; */
 }
-
+.article{
+  background-image: url(./images/sphere-3d-model-2560x1080-10993.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .form{
+  background-image: url(./images/sphere-3d-model-2560x1080-10993.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   /* border: 1px solid red; */
   justify-content: flex-end;
@@ -78,21 +93,31 @@ body {
   color: hsl(0, 0%, 100%);
 }
 .input input {
-  display: flex;
   padding: 0.4rem;
-  /* width: 100%; */
   border-radius: 5px;
   border: none;
-  /* background-color: hsl(213, 19%, 18%); */
 }
 .userDetails {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   grid-column: 1 / span 2;
   grid-row: 2;
-  border: 1px solid red;
-  padding: 2rem;
+  /* border: 1px solid red; */
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.accountDetails{
+  display: flex;
+  line-height: 0.5;
+  flex-direction: column;
+  background-image: url(./images/sphere-3d-model-2560x1080-10993.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 .button {
   display: flex;

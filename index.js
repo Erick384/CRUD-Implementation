@@ -22,6 +22,10 @@ let formValidation = () => {
   }else {
     msg.innerHTML = "User Details Saved!!";
   }
+
+  msg.style.fontSize = "30px";
+  msg.style.color = "hsl(0, 0%, 100%)";
+
   acceptData();
 };
 
@@ -66,13 +70,15 @@ let createUser = () => {
   let userDetailsHTML = "";
   for (let i = 0; i < users.length; i++) {
     userDetailsHTML += `
-      <div>
+      <div class="accountDetails">
         <p><strong>Username:</strong> ${users[i].userName}</p>
         <p><strong>Country:</strong> ${users[i].idNumber}</p>
         <p><strong>ID Number:</strong> ${users[i].country}</p>
         <p><strong>Language:</strong> ${users[i].language}</p>
-        <button type="button" class="btn btn-success" onclick="editUser(${i})">Edit</button>
-        <button type="button" class="btn btn-danger" onclick="deleteUser(${i})">Delete</button>
+          <div class="button">
+            <button type="button" class="btn btn-success" onclick="editUser(${i})">Edit</button>
+            <button type="button" class="btn btn-danger" onclick="deleteUser(${i})">Delete</button>
+          </div>
       </div>
     `;
   }
@@ -80,7 +86,6 @@ let createUser = () => {
   // Set the HTML of the output element to display all user details
   output.innerHTML = userDetailsHTML;
 
-  output.style.display = "block";
   output.style.color = "hsl(0, 0%, 100%)";
 };
 
