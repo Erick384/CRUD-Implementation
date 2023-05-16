@@ -5,6 +5,8 @@ let country = document.querySelector(".state");
 let language = document.querySelector(".language");
 let output = document.querySelector(".userDetails");
 let msg = document.querySelector(".msg");
+let homeLink = document.querySelector(".homeLink");
+let userDetailsLink = document.querySelector(".userDetailsLink");
 
 // Initialize an empty array to store user details
 let users = [];
@@ -14,17 +16,25 @@ form.addEventListener("submit", (e) => {
   formValidation();
 });
 
+homeLink.addEventListener("click", () => {
+  navigateToHome();
+});
+
+userDetailsLink.addEventListener("click", () => {
+  navigateToUserDetails();
+});
+
 let formValidation = () => {
   if (userName.value === "") {
     msg.innerHTML = "Fill the required fields";
   } else if (checkExistingUser()) {
-    msg.innerHTML = "User already exists";
+    msg.innerHTML = `<h5 class="UserExists">USER ALREADY EXISTS.</h5>`;
   }else {
-    msg.innerHTML = "User Details Saved!!";
+    msg.innerHTML = `<h5 class="savedDetails">USER DETAILS SAVED.</h5>`;
   }
 
   msg.style.fontSize = "30px";
-  msg.style.color = "hsl(0, 0%, 100%)";
+  msg.style.color = "hsl(39, 100%, 50%)";
 
   acceptData();
 };
