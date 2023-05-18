@@ -20,9 +20,14 @@ homeLink.addEventListener("click", () => {
   navigateToHome();
 });
 
-userDetailsLink.addEventListener("click", () => {
-  navigateToUserDetails();
-});
+function scrollToDiv(event, userContent) {
+  event.preventDefault(); // Prevent the default behavior of the link
+
+  let div = document.querySelector(".userContent");
+  if (div) {
+    div.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly to the <div>
+  }
+}
 
 let formValidation = () => {
   if (userName.value === "") {
@@ -34,6 +39,10 @@ let formValidation = () => {
   }
 
   msg.style.fontSize = "30px";
+  msg.style.width = '300px'
+  msg.style.border = '1px solid hsl(39, 100%, 50%)'
+  msg.style.boxShadow = "0 3px 10px rgb(255 165 0 / 0.2)"
+  msg.style.padding = '1rem'
   msg.style.color = "hsl(39, 100%, 50%)";
 
   acceptData();
