@@ -128,7 +128,7 @@ article span {
 }
 .accountDetails {
   display: flex;
-  line-height: 0.7;
+  line-height: normal;
   flex-direction: column;
   background-image: url(./images/sphere-3d-model-2560x1080-10993.jpg);
   background-position: center;
