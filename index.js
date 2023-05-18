@@ -5,20 +5,21 @@ let country = document.querySelector(".state");
 let language = document.querySelector(".language");
 let output = document.querySelector(".userDetails");
 let msg = document.querySelector(".msg");
-// let homeLink = document.querySelector(".homeLink");
-let userDetailsLink = document.querySelector(".userDetailsLink");
+let userDetailsLink = document.querySelector(".userContent");
 
 // Initialize an empty array to store user details
 let users = [];
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  userDetailsLink.scrollIntoView({ behavior: 'smooth' });
   formValidation();
-});
+  userName.value = "";
+  idNumber.value = "";
+  country.value = "";
+  language.value = "";
 
-// homeLink.addEventListener("click", () => {
-//   navigateToHome();
-// });
+});
 
 function scrollToUsers(event, userContent) {
   event.preventDefault(); // Prevent the default behavior of the link
@@ -52,7 +53,7 @@ let formValidation = () => {
   msg.style.border = '1px solid hsl(39, 100%, 50%)'
   msg.style.boxShadow = "0 3px 10px rgb(255 165 0 / 0.2)"
   msg.style.padding = '1rem'
-  msg.style.color = "hsl(39, 100%, 50%)";
+  msg.style.color = "hsl(216, 12%, 8%)";
 
   acceptData();
 };
@@ -67,6 +68,10 @@ let checkExistingUser = () => {
       users[i].country === country.value &&
       users[i].language === language.value
     ) {
+      warning.innerHTML =`
+      <div>
+      <h2>WARNING
+      </div>`
       return true;
     }
   }
