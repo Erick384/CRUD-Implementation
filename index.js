@@ -5,7 +5,7 @@ let country = document.querySelector(".state");
 let language = document.querySelector(".language");
 let output = document.querySelector(".userDetails");
 let msg = document.querySelector(".msg");
-let homeLink = document.querySelector(".homeLink");
+// let homeLink = document.querySelector(".homeLink");
 let userDetailsLink = document.querySelector(".userDetailsLink");
 
 // Initialize an empty array to store user details
@@ -16,11 +16,11 @@ form.addEventListener("submit", (e) => {
   formValidation();
 });
 
-homeLink.addEventListener("click", () => {
-  navigateToHome();
-});
+// homeLink.addEventListener("click", () => {
+//   navigateToHome();
+// });
 
-function scrollToDiv(event, userContent) {
+function scrollToUsers(event, userContent) {
   event.preventDefault(); // Prevent the default behavior of the link
 
   let div = document.querySelector(".userContent");
@@ -28,6 +28,15 @@ function scrollToDiv(event, userContent) {
     div.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly to the <div>
   }
 }
+function scrollToReg(event, bodyContent) {
+  event.preventDefault(); // Prevent the default behavior of the link
+
+  let div2 = document.querySelector(".bodyContent");
+  if (div2) {
+    div2.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly to the <div>
+  }
+}
+
 
 let formValidation = () => {
   if (userName.value === "") {
