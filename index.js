@@ -21,7 +21,7 @@ form.addEventListener("submit", (e) => {
 
 });
 
-function scrollToUsers(event, userContent) {
+let scrollToUsers = (event, userContent) => {
   event.preventDefault(); // Prevent the default behavior of the link
 
   let div = document.querySelector(".userContent");
@@ -29,7 +29,7 @@ function scrollToUsers(event, userContent) {
     div.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly to the <div>
   }
 }
-function scrollToReg(event, userForm) {
+let scrollToReg = (event, userForm) => {
   event.preventDefault(); // Prevent the default behavior of the link
 
   let div2 = document.querySelector("#userForm");
@@ -68,11 +68,18 @@ let checkExistingUser = () => {
       users[i].country === country.value &&
       users[i].language === language.value
     ) {
+      let warning = document.querySelector(".form")
       warning.innerHTML =`
       <div>
-      <h2>WARNING
-      </div>`
-      return true;
+      <h2>USER ALREADY EXISTS⚠️</h2>
+      <button type="button" class="btn btn-danger" onclick="window.location.href = 'index.html'">Register New user</button>
+      </div>`;
+      warning.style.display = "flex";
+      warning.style.alignItems = "center";
+      warning.style.justifyContent = "center";
+      warning.style.textAlign = "center";
+      warning.style.gap = "2rem";
+      return;
     }
   }
   return false;
