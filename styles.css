@@ -148,3 +148,50 @@ article span {
   justify-content: center;
   align-items: center;
 }
+@media screen and (max-width: 600px) {
+  html{
+    scroll-snap-type: none;
+  }
+  .bodyContent,
+.userContent{
+  width: 100%;
+  height: fit-content;
+  gap: 0;
+  scroll-snap-align: none;
+  box-shadow: none;
+}
+.header{
+  flex-direction: column;
+  gap: 2rem;
+}
+.article{
+  padding-right: 0;
+}
+  .container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .5rem;
+  text-align: center;
+  grid-template-rows: repeat(2 , auto);
+  }.input input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .msg{
+    display: none;
+  }
+  .userDetails {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    /* border: 1px solid red; */
+    gap: 1rem;
+  }
+  .scrollDown{
+    margin-top: 2rem;
+  }
+  .scrollDown h3, .scrollUp h3{
+    font-size: 16px;
+  }
+}

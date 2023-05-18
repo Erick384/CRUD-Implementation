@@ -28,10 +28,10 @@ function scrollToUsers(event, userContent) {
     div.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly to the <div>
   }
 }
-function scrollToReg(event, bodyContent) {
+function scrollToReg(event, userForm) {
   event.preventDefault(); // Prevent the default behavior of the link
 
-  let div2 = document.querySelector(".bodyContent");
+  let div2 = document.querySelector("#userForm");
   if (div2) {
     div2.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly to the <div>
   }
